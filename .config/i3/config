@@ -1,0 +1,6 @@
+### config
+### Commentary:
+## Main i3wm configuration.
+### Configuration:
+
+include ./config.d/*.conf
