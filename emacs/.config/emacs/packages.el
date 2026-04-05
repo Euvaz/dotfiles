@@ -29,8 +29,7 @@
   (global-corfu-mode)
   (corfu-history-mode)
   :config
-  (setq corfu-auto t
-        corfu-cycle t
+  (setq corfu-cycle t
         corfu-on-exact-match nil
         corfu-preselect 'prompt
         text-mode-ispell-word-completion nil)
