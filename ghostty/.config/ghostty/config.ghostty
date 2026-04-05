@@ -1,0 +1,4 @@
+font-family = "Fira Code"
+font-family-italic = "Victor Mono"
+font-size = 16
+gtk-titlebar = false
