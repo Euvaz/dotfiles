@@ -1,0 +1,74 @@
+#!/bin/bash
+# dotty - GNU stow wrapper utility
+
+set -euo pipefail
+
+: "${DOTFILES_DIR:=$(pwd)}"
+: "${DEST:=${HOME}}"
+: "${DRY_RUN:=0}"
+
+if [ -n "${DOTFILES_DIR}" ]; then
+    DOTFILES_DIR="$(cd "${DOTFILES_DIR}" 2>/dev/null && pwd || printf "%s" "${DOTFILES_DIR}")"
+fi
+
+STOW_CMD="stow --dir=${DOTFILES_DIR} --target ${DEST}"
+if [ "${DRY_RUN}" = "1" ] || [ "${DRY_RUN}" = "true" ]; then
+    STOW_CMD="${STOW_CMD} --no"
+fi
+
+DESKTOP_PKGS=(bash emacs ghostty i3)
+LAPTOP_PKGS=(bash emacs ghostty i3)
+
+usage() {
+    cat <<EOF
+Usage: $0 <target>
+
+Targets:
+  desktop  Stow packges in the desktop group
+  laptop   Stow packages in the laptop group
+  help     Show this help
+
+Environment variables:
+  DOTFILES_DIR  Directory containing your dotfile packages (default: ".")
+  DEST          Target directory for stow (default: "~")
+  DRY_RUN       If 1 or "true", run stow with "--no" (default: "0")
+
+Examples:
+  DRY_RUN=1 ./dotty desktop
+  DOTFILES_DIR=~/dotfiles DEST=/tmp ./dotty laptop
+EOF
+}
+
+stow_pkgs() {
+    local -n pkgs=$1
+    for pkg in "${pkgs[@]}"; do
+        printf '%s\n' "${STOW_CMD} ${pkg}"
+        eval "${STOW_CMD} \"${pkg}\""
+    done
+}
+
+main() {
+    if [ $# -lt 1 ]; then
+        usage
+        exit 2
+    fi
+
+    case "$1" in
+        desktop)
+            stow_pkgs DESKTOP_PKGS
+            ;;
+        laptop)
+            stow_pkgs LAPTOP_PKGS
+            ;;
+        help|-h|--help)
+            usage
+            ;;
+        *)
+            printf 'Unknown target: %s\n\n' "$1" >&2
+            usage
+            exit 2
+            ;;
+        esac
+}
+
+main "$@"
