@@ -107,6 +107,7 @@
           (hyprlang "https://github.com/tree-sitter-grammars/tree-sitter-hyprlang")
           (json "https://github.com/tree-sitter/tree-sitter-json")
           (python "https://github.com/tree-sitter/tree-sitter-python")
+          (rust "https://github.com/tree-sitter/tree-sitter-rust")
           (toml "https://github.com/tree-sitter/tree-sitter-toml")
           (yaml "https://github.com/ikatyang/tree-sitter-yaml")
           (zig "https://github.com/tree-sitter-grammars/tree-sitter-zig")
@@ -161,6 +162,10 @@
   :ensure nil
   :config (add-to-list 'major-mode-remap-alist '(python-mode . python-ts-mode))
   :mode ("\\.py[iw]?\\'"))
+
+(use-package rust-ts-mode
+  :ensure nil
+  :mode("\\.rs\\'"))
 
 (use-package toml-ts-mode
   :ensure nil
