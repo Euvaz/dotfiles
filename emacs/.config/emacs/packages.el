@@ -105,6 +105,7 @@
           (gomod "https://github.com/camdencheek/tree-sitter-go-mod")
           (html "https://github.com/tree-sitter/tree-sitter-html")
           (json "https://github.com/tree-sitter/tree-sitter-json")
+          (lua "https://github.com/tree-sitter-grammars/tree-sitter-lua")
           (python "https://github.com/tree-sitter/tree-sitter-python")
           (rust "https://github.com/tree-sitter/tree-sitter-rust")
           (toml "https://github.com/tree-sitter/tree-sitter-toml")
@@ -153,6 +154,10 @@
   :ensure nil
   :config (add-to-list 'major-mode-remap-alist '(js-json-mode . json-ts-mode))
   :mode ("\\.jsonc?\\'"))
+
+(use-package lua-ts-mode
+  :ensure nil
+  :mode ("\\.lua\\'"))
 
 (use-package python-ts-mode
   :ensure nil
