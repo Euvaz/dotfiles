@@ -54,7 +54,7 @@
     cyan-intense:       #00eff0;
     cyan-faint:         #9ac8e0;
 
-    accent:             @cyan-intense;   /* bright cyan */
+    accent:             @cyan-intense;
 
     /***** [ Elements ] *****/
 
