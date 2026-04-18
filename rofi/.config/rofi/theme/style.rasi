@@ -50,12 +50,12 @@ inputbar {
 
 /* Prompt & entry */
 prompt {
-    padding: 10px 16px 2px 20px;
+    padding: 12px 16px 2px 20px;
     text-color: @accent;
     font: "Fira Code Font Medium 18";
 }
 entry {
-    padding: 14px 0px 2px 0px;
+    padding: 14px 0px 4px 0px;
     text-color: @fg;
     background-color: @bg;
     font: "Fira Code Font Medium 18";
