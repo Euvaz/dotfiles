@@ -62,7 +62,7 @@
     background-alt:         @bg-dim;
     background-selected:    @bg-active;
     background-active:      @bg-hover;
-    background-urgent:      @bg-red-intense;
+    background-urgent:      @red-intense;
 
     foreground:             @fg-main;
     foreground-alt:         @fg-dim;
