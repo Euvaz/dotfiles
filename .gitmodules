@@ -1,0 +1,3 @@
+[submodule "st/.config/st"]
+	path = st/.config/st
+	url = https://github.com/Euvaz/st
