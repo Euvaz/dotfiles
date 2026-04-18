@@ -16,8 +16,8 @@ if [ "${DRY_RUN}" = "1" ] || [ "${DRY_RUN}" = "true" ]; then
     STOW_CMD="${STOW_CMD} --no"
 fi
 
-DESKTOP_PKGS=(bash emacs i3 polybar st)
-LAPTOP_PKGS=(bash emacs i3 polybar st)
+DESKTOP_PKGS=(bash emacs i3 polybar rofi st)
+LAPTOP_PKGS=(bash emacs i3 polybar rofi st)
 
 usage() {
     cat <<EOF

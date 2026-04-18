@@ -1,0 +1,104 @@
+/***************************************************
+ * Name:    Modus‑Vivendi Tinted Colors
+ * Author:  Me
+ * Date:    2026‑04‑18
+ ***************************************************/
+
+* {
+    /***** [ Base Colors ] *****/
+
+    white:      #ffffff;
+    black:      #000000;
+    red:        #ff5f59;
+    green:      #44bc44;
+    yellow:     #d0bc00;
+    blue:       #2fafff;
+    magenta:    #feacd0;
+    cyan:       #00d3d0;
+
+    /***** [ Modus‑Vivendi Custom Colors ] *****/
+
+    bg-main:            #0d0e1c;
+    bg-dim:             #1d2235;
+    bg-active:          #4a4f69;
+    bg-inactive:        #2b3045;
+    bg-hover:           #45605e;
+    bg-hover-sec:       #64404f;
+    bg-hl-line:         #303a6f;
+    bg-region:          #555a66;
+    bg-mode-line-act:   #484d67;
+    bg-mode-line-inact: #292d48;
+    bg-tab-bar:         #2c3045;
+    bg-tab-cur:         #0d0e1c;
+    bg-tab-other:       #4a4f6a;
+
+    fg-main:            #ffffff;
+    fg-dim:             #989898;
+    fg-alt:             #c6daff;
+    fg-clay:            #f1b090;
+    fg-ochre:           #e0d09c;
+    fg-lavender:        #dfc0f0;
+    fg-sage:            #c3e7d4;
+    fg-region:          #ffffff;
+
+    red-intense:        #ff5f5f;
+    red-faint:          #ef8386;
+    green-intense:      #44df44;
+    green-faint:        #88ca9f;
+    yellow-intense:    #efef00;
+    yellow-faint:       #d2b580;
+    blue-intense:       #338fff;
+    blue-faint:         #82b0ec;
+    magenta-intense:    #ff66ff;
+    magenta-faint:      #caa6df;
+    cyan-intense:       #00eff0;
+    cyan-faint:         #9ac8e0;
+
+    accent:             @cyan-intense;   /* bright cyan */
+
+    /***** [ Elements ] *****/
+
+    background:             @bg-main;
+    background-alt:         @bg-dim;
+    background-selected:    @bg-active;
+    background-active:      @bg-hover;
+    background-urgent:      @bg-red-intense;
+
+    foreground:             @fg-main;
+    foreground-alt:         @fg-dim;
+    foreground-selected:    @fg-main;
+    foreground-active:      @fg-main;
+    foreground-urgent:      @red-intense;
+
+    background-color:       @bg-main;
+    text-color:             @fg-main;
+    border-color:           @border;
+    separator-color:        @border;
+
+    normal:                 @fg-main;
+    selected:               @accent;
+    active:                 @accent;
+    urgent:                 @red-intense;
+
+    /***** [ Aliases – DO NOT EDIT ] *****/
+
+    bg:        @background;
+    bg-alt:    @background-alt;
+    bg-sel:    @background-selected;
+    bg-act:    @background-active;
+    bg-urg:    @background-urgent;
+
+    fg:        @foreground;
+    fg-alt:    @foreground-alt;
+    fg-sel:    @foreground-selected;
+    fg-act:    @foreground-active;
+    fg-urg:    @foreground-urgent;
+
+    sel:       @selected;
+    act:       @active;
+    urg:       @urgent;
+    text:      @text-color;
+    txt:       @text-color;
+    border:    @border-color;
+    separator:@separator-color;
+}

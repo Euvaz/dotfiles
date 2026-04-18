@@ -1,0 +1,101 @@
+/***************************************************
+ * Name:    Modus‑Vivendi Tinted
+ * Author:  Me
+ * Date:    2026‑04‑18
+ ***************************************************/
+
+@import "colors.rasi"
+
+/* Global configuration */
+configuration {
+    font: "Fira Code Font Medium 18";
+
+    drun   { display-name: "[ > ]"; }
+    run    { display-name: "[ $ ]"; }
+    window { display-name: "[ % ]"; }
+
+    timeout {
+        delay: 10;
+        action: "kb-cancel";
+    }
+}
+
+/* Reset defaults */
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+/* Window */
+window {
+    transparency: "real";
+    background-color: @bg;
+    border: 2px;
+    border-color: @border;
+}
+
+/* Layout */
+mainbox {
+    children: [inputbar, listview];
+}
+
+/* Input bar */
+inputbar {
+    children: [prompt, entry];
+    padding: 6px;
+    background-color: @bg-alt;
+}
+
+/* Prompt & entry */
+prompt {
+    padding: 10px 16px 2px 20px;
+    text-color: @accent;
+    font: "Fira Code Font Medium 18";
+}
+entry {
+    padding: 14px 0px 2px 0px;
+    text-color: @fg;
+    background-color: @bg;
+    font: "Fira Code Font Medium 18";
+}
+
+/* List view */
+listview {
+    lines: 8;
+    background-color: @bg;
+}
+
+/* Elements */
+element {
+    children: [element-text];
+    background-color: @bg;
+    border: 1px;
+    border-color: @bg-alt;
+}
+element-text {
+    padding: 6px 12px;
+    text-color: @fg-alt;
+}
+
+/* Selected / hovered element */
+element-text selected {
+    background-color: @bg-sel;
+    text-color: @sel;
+}
+element-text active {
+    background-color: @bg-act;
+    text-color: @act;
+}
+element-text urgent {
+    background-color: @bg-urg;
+    text-color: @urg;
+}
+
+/* Scrollbar (optional) */
+scrollbar {
+    width: 6px;
+    handle-color: @accent;
+    border-color: @border;
+}
