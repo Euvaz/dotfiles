@@ -45,7 +45,7 @@
     red-faint:          #ef8386;
     green-intense:      #44df44;
     green-faint:        #88ca9f;
-    yellow-intense:    #efef00;
+    yellow-intense:     #efef00;
     yellow-faint:       #d2b580;
     blue-intense:       #338fff;
     blue-faint:         #82b0ec;
@@ -100,5 +100,5 @@
     text:      @text-color;
     txt:       @text-color;
     border:    @border-color;
-    separator:@separator-color;
+    separator: @separator-color;
 }
