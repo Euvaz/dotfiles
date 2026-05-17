@@ -85,11 +85,6 @@
 (use-package geiser-guile
   :commands (geiser-guile run-guile))
 
-(use-package sly
-  :commands (sly sly-connect)
-  :config (setq sly-lisp-implementations
-                '((sbcl ("sbcl") :coding-system utf-8-unix))))
-
 (use-package treesit
   :ensure nil
   :defer t
