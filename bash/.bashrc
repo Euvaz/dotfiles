@@ -1,5 +1,8 @@
 export SHELL
 
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
 if [[ $- != *i* ]]
 then
     [[ -n "${SSH_CLIENT}" ]] && source /etc/profile
