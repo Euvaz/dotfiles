@@ -19,5 +19,3 @@ then
 else
     PS1="\[\e[38;5;4m\]\u@\h \[\e[38;5;13m\]\w \[\e[38;5;14m\]\$ \[\e[m\]"
 fi
-
-. "$HOME/.local/share/../bin/env"
