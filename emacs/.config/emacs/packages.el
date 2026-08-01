@@ -105,7 +105,6 @@
           (rust "https://github.com/tree-sitter/tree-sitter-rust")
           (toml "https://github.com/tree-sitter/tree-sitter-toml")
           (yaml "https://github.com/ikatyang/tree-sitter-yaml")
-          (zig "https://github.com/tree-sitter-grammars/tree-sitter-zig")
           )))
 
 (use-package bash-ts-mode
@@ -172,7 +171,7 @@
   :ensure nil
   :mode ("\\.ya?ml\\'"))
 
-(use-package zig-ts-mode
+(use-package zig-mode
   :mode ("\\.zig\\'"))
 
 ;;; packages.el ends here
