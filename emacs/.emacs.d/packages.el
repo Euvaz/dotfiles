@@ -104,7 +104,7 @@
           (python "https://github.com/tree-sitter/tree-sitter-python")
           (rust "https://github.com/tree-sitter/tree-sitter-rust")
           (toml "https://github.com/tree-sitter/tree-sitter-toml")
-          (yaml "https://github.com/ikatyang/tree-sitter-yaml")
+          (yaml "https://github.com/tree-sitter-grammars/tree-sitter-yaml")
           )))
 
 (use-package bash-ts-mode
