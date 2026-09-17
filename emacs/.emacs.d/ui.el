@@ -21,7 +21,7 @@
 ;; Load theme and define font
 (load-theme 'modus-vivendi-tinted t)
 (set-face-attribute 'default nil :font "Fira Code" :height 160)
-(set-face-attribute 'italic nil :font "Victor Mono" :height 160)
+(set-face-attribute 'italic nil :font "JetBrains Mono" :height 160)
 
 ;; Define frame's background transparency
 (set-frame-parameter nil 'alpha-background 97)
