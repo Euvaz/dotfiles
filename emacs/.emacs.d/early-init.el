@@ -8,4 +8,9 @@
 (push '(tool-bar-lines . 0) default-frame-alist)
 (push '(vertical-scroll-bars . nil) default-frame-alist)
 
+;; Raise GC threshold
+(setq gc-cons-threshold most-positive-fixnum)
+(add-hook 'emacs-startup-hook
+          (lambda () (setq gc-cons-threshold (* 32 1024 1024))))
+
 ;;; early-init.el ends here
