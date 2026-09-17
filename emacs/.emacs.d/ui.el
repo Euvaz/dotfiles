@@ -13,11 +13,6 @@
 
 ;;; Code:
 
-;; Disable UI elements
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-
 ;; Load theme and define font
 (load-theme 'modus-vivendi-tinted t)
 (set-face-attribute 'default nil :font "Fira Code" :height 160)
