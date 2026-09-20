@@ -1,6 +1,6 @@
 ;;; early-init.el -*- lexical-binding: t; -*-
 ;;; Commentary:
-;; Runs before everyting else
+;; Runs before everything else
 ;;; Code:
 
 ;; Prevent toolbar, menu-bar, and scroll-bar from being drawn
