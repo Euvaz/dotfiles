@@ -171,6 +171,9 @@
   :ensure nil
   :mode ("\\.ya?ml\\'"))
 
+(use-package markdown-mode
+  :mode ("\\.md\\'"))
+
 (use-package zig-mode
   :mode ("\\.zig\\'"))
 
