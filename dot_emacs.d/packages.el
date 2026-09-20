@@ -102,7 +102,6 @@
           (json "https://github.com/tree-sitter/tree-sitter-json")
           (lua "https://github.com/tree-sitter-grammars/tree-sitter-lua")
           (python "https://github.com/tree-sitter/tree-sitter-python")
-          (rust "https://github.com/tree-sitter/tree-sitter-rust")
           (toml "https://github.com/tree-sitter/tree-sitter-toml")
           (yaml "https://github.com/tree-sitter-grammars/tree-sitter-yaml")
           )))
@@ -158,10 +157,6 @@
   :config (add-to-list 'major-mode-remap-alist '(python-mode . python-ts-mode))
   :mode ("\\.py[iw]?\\'"))
 
-(use-package rust-ts-mode
-  :ensure nil
-  :mode("\\.rs\\'"))
-
 (use-package toml-ts-mode
   :ensure nil
   :config (add-to-list 'major-mode-remap-alist '(conf-toml-mode . toml-ts-mode))
@@ -173,6 +168,9 @@
 
 (use-package markdown-mode
   :mode ("\\.md\\'"))
+
+(use-package rust-mode
+  :mode ("\\.rs\\'"))
 
 (use-package zig-mode
   :mode ("\\.zig\\'"))
