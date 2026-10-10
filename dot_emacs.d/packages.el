@@ -44,9 +44,6 @@
 
 (use-package org
   :ensure nil
-  :config
-  (setq org-todo-keywords '((sequence "TODO(t)" "PROG(p)" "|" "DONE(d)")
-                            (sequence "BACKLOG(b)" "|" "CANCELLED(c@)")))
   :mode ("\\.org\\'" . org-mode))
 
 (use-package ob
