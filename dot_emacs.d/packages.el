@@ -67,18 +67,24 @@
   :config
   (defvar dotfiles-diff-hl--repos nil)
 
+  (defun dotfiles-diff-hl--apply (enable)
+    (if buffer-file-name
+        (diff-hl-mode (if enable 1 -1))
+      (diff-hl-dired-mode (if enable 1 -1))
+      (when enable (diff-hl-dired-update))))
+
   (defun dotfiles-diff-hl--maybe-enable ()
-    (when (and buffer-file-name (member (magit-toplevel) dotfiles-diff-hl--repos))
-      (diff-hl-mode 1)))
+    (when (and (or buffer-file-name (derived-mode-p 'dired-mode))
+               (member (magit-toplevel) dotfiles-diff-hl--repos))
+      (dotfiles-diff-hl--apply t)))
 
   (defun dotfiles-diff-hl--set-buffers (root enable)
     (dolist (buf (buffer-list))
       (with-current-buffer buf
-        (when (and buffer-file-name
-                   (string-prefix-p root (expand-file-name buffer-file-name))
-                   (or enable diff-hl-mode)
+        (when (and (or buffer-file-name (derived-mode-p 'dired-mode))
+                   (string-prefix-p root (expand-file-name default-directory))
                    (equal (magit-toplevel) root))
-          (diff-hl-mode (if enable 1 -1))))))
+          (dotfiles-diff-hl--apply enable)))))
 
   (defun dotfiles-diff-hl--toggle-repo (root enable)
     (if enable
