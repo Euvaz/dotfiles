@@ -46,20 +46,6 @@
   :ensure nil
   :mode ("\\.org\\'" . org-mode))
 
-(use-package ob
-  :ensure nil
-  :after org
-  :config
-  (setq org-confirm-babel-evaluate nil
-        org-edit-src-content-indentation 0)
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '(
-     (C . t)
-     (python . t)
-     (shell . t)
-     )))
-
 (use-package htmlize
   :after org)
 
