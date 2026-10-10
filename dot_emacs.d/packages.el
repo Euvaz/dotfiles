@@ -14,6 +14,9 @@
       use-package-compute-statistics t
       use-package-always-ensure t)
 
+(use-package gcmh
+  :config (gcmh-mode 1))
+
 (use-package vertico
   :init (setq enable-recursive-minibuffers t)
   :config (vertico-mode t))
