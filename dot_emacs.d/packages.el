@@ -60,7 +60,6 @@
    '(
      (C . t)
      (python . t)
-     (scheme . t)
      (shell . t)
      )))
 
@@ -76,14 +75,6 @@
 (use-package magit-todos
   :after magit
   :config (magit-todos-mode 1))
-
-(use-package geiser
-  :commands (geiser run-geiser)
-  :config (setq geiser-mode-start-repl-p t
-                geiser-repl-query-on-kill-p nil))
-
-(use-package geiser-guile
-  :commands (geiser-guile run-guile))
 
 (use-package treesit
   :ensure nil
