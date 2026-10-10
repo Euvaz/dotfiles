@@ -59,6 +59,49 @@
   :after magit
   :config (magit-todos-mode 1))
 
+(use-package diff-hl
+  :after magit
+  :config
+  (defvar dotfiles-diff-hl--repos nil)
+
+  (defun dotfiles-diff-hl--maybe-enable ()
+    (when (and buffer-file-name (member (magit-toplevel) dotfiles-diff-hl--repos))
+      (diff-hl-mode 1)))
+
+  (defun dotfiles-diff-hl--set-buffers (root enable)
+    (dolist (buf (buffer-list))
+      (with-current-buffer buf
+        (when (and buffer-file-name
+                   (string-prefix-p root (expand-file-name buffer-file-name))
+                   (or enable diff-hl-mode)
+                   (equal (magit-toplevel) root))
+          (diff-hl-mode (if enable 1 -1))))))
+
+  (defun dotfiles-diff-hl--toggle-repo (root enable)
+    (if enable
+        (push root dotfiles-diff-hl--repos)
+      (setq dotfiles-diff-hl--repos (delete root dotfiles-diff-hl--repos)))
+    (run-with-timer 0 nil #'dotfiles-diff-hl--set-buffers root enable))
+
+  (defun dotfiles-diff-hl--enable-for-repo ()
+    (let ((root (magit-toplevel)))
+      (when (and root (not (member root dotfiles-diff-hl--repos)))
+        (dotfiles-diff-hl--toggle-repo root t))))
+
+  (defun dotfiles-diff-hl--maybe-disable-for-repo ()
+    (when (derived-mode-p 'magit-mode)
+      (let ((root (magit-toplevel)))
+        (when (and root
+                   (member root dotfiles-diff-hl--repos)
+                   (not (remq (current-buffer) (magit-mode-get-buffers))))
+          (dotfiles-diff-hl--toggle-repo root nil)))))
+
+  (add-hook 'magit-status-mode-hook #'dotfiles-diff-hl--enable-for-repo)
+  (add-hook 'kill-buffer-hook #'dotfiles-diff-hl--maybe-disable-for-repo)
+  (add-hook 'after-change-major-mode-hook #'dotfiles-diff-hl--maybe-enable)
+  (add-hook 'magit-pre-refresh-hook #'diff-hl-magit-pre-refresh)
+  (add-hook 'magit-post-refresh-hook #'diff-hl-magit-post-refresh))
+
 (use-package treesit
   :ensure nil
   :defer t
