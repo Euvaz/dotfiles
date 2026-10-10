@@ -67,8 +67,8 @@
 (use-package htmlize
   :after org)
 
-(use-package vterm
-  :commands (vterm))
+(use-package eat
+  :commands (eat))
 
 (use-package magit
   :commands (magit-status magit))
