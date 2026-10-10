@@ -11,9 +11,9 @@
                      gcs-done)))
 
 ;; Load files
-(load (concat user-emacs-directory "editor.el"))
-(load (concat user-emacs-directory "packages.el"))
-(load (concat user-emacs-directory "ui.el"))
+(load (concat user-emacs-directory "editor"))
+(load (concat user-emacs-directory "packages"))
+(load (concat user-emacs-directory "ui"))
 
 ;; Utilize separate custom-set-variables file
 (setq custom-file (concat user-emacs-directory "custom.el"))
